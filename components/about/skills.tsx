@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import {
   SiReact, SiVuedotjs, SiTypescript, SiAngular, SiSass,
-  SiNodedotjs, SiExpress, SiJava, SiPhp,
+  SiNodedotjs, SiExpress, SiPhp,
   SiGit, SiTailwindcss
 } from 'react-icons/si';
 
@@ -18,7 +18,6 @@ const skills = {
   Backend: [
     { name: "Node.js", Icon: SiNodedotjs },
     { name: "Express", Icon: SiExpress },
-    { name: "Java", Icon: SiJava },
     { name: "PHP", Icon: SiPhp }
   ],
   "Tools & Others": [
