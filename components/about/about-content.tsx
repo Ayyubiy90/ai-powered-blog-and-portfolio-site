@@ -29,15 +29,15 @@ export default function AboutContent() {
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
               <div className="space-y-4">
                 <p>
-                  I`m a Frontend Developer from Lagos, Nigeria, with a growing
+                  I&apos;m a Frontend Developer from Lagos, Nigeria, with a growing
                   interest in backend development. Self-taught for 2 years, with
-                  an additional year of project experience, I`m passionate about
+                  an additional year of project experience, I&apos;m passionate about
                   creating responsive and intuitive web applications.
                 </p>
                 <p>
-                  Currently pursuing a bachelor`s degree in Computer Science,
-                  I`m open to remote full-time, part-time, or contract roles.
-                  Outside of coding, I`m an avid tech enthusiast, love exploring
+                  Currently pursuing a bachelor&apos;s degree in Computer Science,
+                  I&apos;m open to remote full-time, part-time, or contract roles.
+                  Outside of coding, I&apos;m an avid tech enthusiast, love exploring
                   new gadgets, and enjoy gaming.
                 </p>
               </div>

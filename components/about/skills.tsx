@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   SiReact, SiVuedotjs, SiTypescript, SiAngular, SiSass,
   SiNodedotjs, SiExpress, SiPhp,
-  SiGit, SiTailwindcss
+  SiGit, SiTailwindcss, SiOpenai,
 } from 'react-icons/si';
 
 const skills = {
@@ -22,7 +22,8 @@ const skills = {
   ],
   "Tools & Others": [
     { name: "Git", Icon: SiGit },
-    { name: "Tailwind CSS", Icon: SiTailwindcss }
+    { name: "Tailwind CSS", Icon: SiTailwindcss },
+    { name: "AI", Icon: SiOpenai }
   ]
 };
 
