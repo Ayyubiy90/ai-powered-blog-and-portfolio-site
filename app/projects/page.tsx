@@ -1,29 +1,74 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Github, Globe } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+// Array of project objects containing details about each project
 const projects = [
   {
-    title: "AI Chat Assistant",
-    description: "A sophisticated chatbot powered by machine learning that provides personalized responses.",
-    tech: ["React", "TypeScript", "TensorFlow.js"],
-    github: "https://github.com/yourusername/ai-chat",
-    live: "https://ai-chat-demo.com",
+    title: "Personal Budget Tracker", // Title of the project
+    description:
+      "The Personal Budget Tracker is a user-friendly web app that helps you manage your finances by tracking income and expenses with secure authentication and interactive visual insights.", // Brief description of the project
+    tech: [
+      "React",
+      "Typescript",
+      "Tailwind CSS",
+      "Firebase",
+      "Recharts",
+      "React Hook Form",
+      "Currency.js",
+    ], // Technologies used in the project
+    github: "https://github.com/Ayyubiy90/budget-tracker", // GitHub repository link
+    live: "https://budget-tracker-ashen.vercel.app/", // Live demo link
   },
   {
-    title: "Smart Task Manager",
-    description: "An intelligent task management system that uses AI to prioritize and organize tasks.",
-    tech: ["Next.js", "Python", "PostgreSQL"],
-    github: "https://github.com/yourusername/smart-tasks",
-    live: "https://smart-tasks-demo.com",
+    title: "Modern Dashboard",
+    description:
+      "A highly personalized, interactive dashboard that demonstrates your ability to integrate multiple APIs, manage complex data flows, and create a clean, user-friendly interface.",
+    tech: [
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "CSS",
+      "Zustand",
+      "Hello Pangea DND",
+      "React Hot Toast",
+      "React Error Boundary",
+    ],
+    github:
+      "https://github.com/Ayyubiy90/personalized-dashboard-with-API-integrations",
+    live: "https://personalized-dashboard-with-api-integrations.vercel.app/",
   },
   {
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets with real-time updates.",
-    tech: ["D3.js", "React", "Node.js"],
-    github: "https://github.com/yourusername/data-viz",
-    live: "https://data-viz-demo.com",
+    title: "ModernStore - React E-commerce Platform",
+    description:
+      "A fully functional e-commerce store with a modern, polished design and engaging animations.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "CSS",
+      "Zustand",
+      "Lucide React",
+      "Stripe",
+      "Framer motion",
+    ],
+    github: "https://github.com/Ayyubiy90/modern-e-commerce-store",
+    live: "https://modern-e-commerce-store.vercel.app/",
+  },
+  {
+    title: "Siphome Smart Home System",
+    description:
+      "This project aims to revolutionize how we interact with our homes by providing advanced smart home solutions.",
+    tech: ["React", "JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Ayyubiy90/siphome",
+    live: "https://siphome-chinxas-projects.vercel.app/",
   },
 ];
 
@@ -49,8 +94,7 @@ export default function ProjectsPage() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm"
-                    >
+                      className="px-2 py-1 bg-secondary text-secondary-foreground rounded-md text-sm">
                       {tech}
                     </span>
                   ))}
