@@ -20,7 +20,10 @@ export default function AboutContent() {
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl font-bold">About Me</h1>
           <p className="text-muted-foreground text-lg">
-          Frontend Developer with 3 years of experience building scalable web applications, specializing in the React ecosystem and modern web technologies. Proficient in frontend development with supporting experience in backend technologies for full-stack projects.
+            Frontend Developer with 3 years of experience building scalable web
+            applications, specializing in the React ecosystem and modern web
+            technologies. Proficient in frontend development with supporting
+            experience in backend technologies for full-stack projects.
           </p>
         </div>
 
@@ -29,23 +32,24 @@ export default function AboutContent() {
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
               <div className="space-y-4">
                 <p>
-                  I&apos;m a Frontend Developer from Lagos, Nigeria, with a growing
-                  interest in backend development. Self-taught for 2 years, with
-                  an additional year of project experience, I&apos;m passionate about
-                  creating responsive and intuitive web applications.
+                  I&apos;m a Frontend Developer from Lagos, Nigeria, with a
+                  growing interest in backend development. Self-taught for 2
+                  years, with an additional year of project experience, I&apos;m
+                  passionate about creating responsive and intuitive web
+                  applications.
                 </p>
                 <p>
-                  Currently pursuing a bachelor&apos;s degree in Computer Science,
-                  I&apos;m open to remote full-time, part-time, or contract roles.
-                  Outside of coding, I&apos;m an avid tech enthusiast, love exploring
-                  new gadgets, and enjoy gaming.
+                  Currently pursuing a bachelor&apos;s degree in Computer
+                  Science, I&apos;m open to remote full-time, part-time, or
+                  contract roles. Outside of coding, I&apos;m an avid tech
+                  enthusiast, love exploring new gadgets, and enjoy gaming.
                 </p>
               </div>
               <Button
                 variant="outline"
                 className="flex items-center gap-2 whitespace-nowrap"
                 asChild>
-                <Link href="/Abdullah Abdurazaq.pdf" target="_blank">
+                <Link href="/Abdullah Abdurazaq CV.pdf" target="_blank">
                   <FileText className="h-4 w-4" />
                   <span className="hidden sm:inline">Download</span> CV
                   <Download className="h-4 w-4 ml-1" />
