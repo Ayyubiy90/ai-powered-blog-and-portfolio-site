@@ -47,12 +47,21 @@ const projects = [
     live: "https://personalized-dashboard-with-api-integrations.vercel.app/",
   },
   {
-    title: "Data Visualization Dashboard",
+    title: "ModernStore - React E-commerce Platform",
     description:
-      "Interactive dashboard for visualizing complex datasets with real-time updates.",
-    tech: ["D3.js", "React", "Node.js"],
-    github: "https://github.com/yourusername/data-viz",
-    live: "https://data-viz-demo.com",
+      "A fully functional e-commerce store with a modern, polished design and engaging animations.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "CSS",
+      "Zustand",
+      "Lucide React",
+      "Stripe",
+      "Framer motion",
+    ],
+    github: "https://github.com/Ayyubiy90/modern-e-commerce-store",
+    live: "https://modern-e-commerce-store.vercel.app/",
   },
 ];
 
