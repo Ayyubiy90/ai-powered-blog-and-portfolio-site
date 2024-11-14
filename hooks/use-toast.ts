@@ -110,7 +110,7 @@ export const reducer = (state: State, action: Action): State => {
 
       // Side effects: add the toast to the removal queue
       if (toastId) {
-        add ToRemoveQueue(toastId); // Add specific toast to the removal queue
+        addToRemoveQueue(toastId); // Add specific toast to the removal queue
       } else {
         // If no specific toast ID is provided, dismiss all toasts
         state.toasts.forEach((toast) => {

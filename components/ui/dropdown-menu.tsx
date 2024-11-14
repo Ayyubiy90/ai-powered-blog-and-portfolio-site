@@ -134,7 +134,7 @@ const DropdownMenuRadioItem = React.forwardRef<
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children} // Rendering children inside the RadioItem
-  </DropdownMenuPrimitive.RadioItem ));
+  </DropdownMenuPrimitive.RadioItem> ));
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName; // Setting display name for debugging
 
 // Creating a DropdownMenuLabel component for labeling items in the dropdown menu
