@@ -1,39 +1,57 @@
-"use client"
+"use client";
 
-import Link from 'next/link';
-import { ModeToggle } from './mode-toggle';
-import { Button } from './ui/button';
-import { Brain, FileText, Home, MessageSquare, User } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from './ui/sheet';
-import { Menu } from 'lucide-react';
+import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
+import { Button } from "./ui/button";
+import { Brain, FileText, Home, MessageSquare, User } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "./ui/sheet";
+import { Menu } from "lucide-react";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const NavItems = ({ className, isMobile = false }: { className?: string, isMobile?: boolean }) => (
+  const NavItems = ({
+    className,
+    isMobile = false,
+  }: {
+    className?: string;
+    isMobile?: boolean;
+  }) => (
     <nav className={cn("flex items-center gap-1 md:gap-2", className)}>
       <Link href="/">
-        <Button variant="ghost" className="flex items-center" onClick={() => isMobile && setIsOpen(false)}>
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
           <Home className="mr-2 h-4 w-4" />
           Home
         </Button>
       </Link>
       <Link href="/projects">
-        <Button variant="ghost" className="flex items-center" onClick={() => isMobile && setIsOpen(false)}>
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
           <FileText className="mr-2 h-4 w-4" />
           Projects
         </Button>
       </Link>
       <Link href="/chat">
-        <Button variant="ghost" className="flex items-center" onClick={() => isMobile && setIsOpen(false)}>
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
           <MessageSquare className="mr-2 h-4 w-4" />
           Chat
         </Button>
       </Link>
       <Link href="/about">
-        <Button variant="ghost" className="flex items-center" onClick={() => isMobile && setIsOpen(false)}>
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
           <User className="mr-2 h-4 w-4" />
           About
         </Button>
@@ -46,7 +64,7 @@ export function Navigation() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
           <Brain className="h-6 w-6" />
-          <span className="font-bold">AI Portfolio</span>
+          <span className="font-bold">Abdullah AI Portfolio</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -56,7 +74,7 @@ export function Navigation() {
 
         <div className="flex items-center gap-2">
           <ModeToggle />
-          
+
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
