@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Brain, MessageSquare, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Brain, MessageSquare, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +14,8 @@ export default function Home() {
                 Welcome to My AI-Powered Portfolio
               </h1>
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                Explore my projects, read my blog posts, and interact with an AI assistant to discover more about my work.
+                Explore my projects, read my blog posts, and interact with an AI
+                assistant to discover more about my work.
               </p>
             </div>
             <div className="space-x-4">
@@ -22,7 +23,9 @@ export default function Home() {
                 <Button className="px-8">Chat with AI</Button>
               </Link>
               <Link href="/projects">
-                <Button variant="outline" className="px-8">View Projects</Button>
+                <Button variant="outline" className="px-8">
+                  View Projects
+                </Button>
               </Link>
             </div>
           </div>
@@ -37,7 +40,8 @@ export default function Home() {
                 <Brain className="h-12 w-12 text-primary" />
                 <h3 className="text-xl font-bold">AI Assistant</h3>
                 <p className="text-center text-gray-500 dark:text-gray-400">
-                  Get personalized recommendations and answers about my work from an AI assistant.
+                  Get personalized recommendations and answers about my work
+                  from an AI assistant.
                 </p>
               </Card>
             </Link>
@@ -46,7 +50,8 @@ export default function Home() {
                 <MessageSquare className="h-12 w-12 text-primary" />
                 <h3 className="text-xl font-bold">Technical Blog</h3>
                 <p className="text-center text-gray-500 dark:text-gray-400">
-                  Deep dives into software development, AI, and technology trends.
+                  Deep dives into software development, AI, and technology
+                  trends.
                 </p>
               </Card>
             </Link>
