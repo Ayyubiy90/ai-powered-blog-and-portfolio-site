@@ -29,12 +29,22 @@ const projects = [
     live: "https://budget-tracker-ashen.vercel.app/", // Live demo link
   },
   {
-    title: "Smart Task Manager",
+    title: "Modern Dashboard",
     description:
-      "An intelligent task management system that uses AI to prioritize and organize tasks.",
-    tech: ["Next.js", "Python", "PostgreSQL"],
-    github: "https://github.com/yourusername/smart-tasks",
-    live: "https://smart-tasks-demo.com",
+      "A highly personalized, interactive dashboard that demonstrates your ability to integrate multiple APIs, manage complex data flows, and create a clean, user-friendly interface.",
+    tech: [
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "CSS",
+      "Zustand",
+      "Hello Pangea DND",
+      "React Hot Toast",
+      "React Error Boundary",
+    ],
+    github:
+      "https://github.com/Ayyubiy90/personalized-dashboard-with-API-integrations",
+    live: "https://personalized-dashboard-with-api-integrations.vercel.app/",
   },
   {
     title: "Data Visualization Dashboard",
