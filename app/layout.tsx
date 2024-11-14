@@ -1,16 +1,19 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Navigation } from '@/components/navigation';
-import { Footer } from '@/components/footer';
-import { Toaster } from '@/components/ui/toaster';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Abdullah AI-Powered Portfolio & Blog',
-  description: 'A modern portfolio and blog with AI-powered recommendations',
+  title: "Abdullah AI-Powered Portfolio & Blog",
+  description: "A modern portfolio and blog with AI-powered recommendations",
+  icons: {
+    icon: "/icon.ico", // Specify the path to your favicon here
+  },
 };
 
 export default function RootLayout({
