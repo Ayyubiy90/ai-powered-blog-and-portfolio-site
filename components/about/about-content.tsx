@@ -1,88 +1,83 @@
-"use client"; // Indicates that this file is a client-side component in a Next.js application
+"use client";
 
-import { createContext, useContext, useEffect, useState } from "react"; // Importing necessary hooks and functions from React
+import { Card, CardContent } from "@/components/ui/card";
+import { Github, Linkedin, Mail, Twitter, FileText, Download } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Skills } from "./skills";
 
-// Defining a type for the theme, which can be 'dark', 'light', or 'system'
-type Theme = "dark" | "light" | "system";
-
-// Defining the props for the ThemeProvider component
-type ThemeProviderProps = {
-  children: React.ReactNode; // Children components that will be wrapped by the ThemeProvider
-  defaultTheme?: Theme; // Optional default theme to be used if no theme is set
-  storageKey?: string; // Optional key for local storage to persist the theme
-  attribute?: string; // Optional attribute to set on the HTML element for theme indication
-  enableSystem?: boolean; // Optional flag to enable detection of the system's theme preference
-};
-
-// Defining the state structure for the ThemeProvider context
-type ThemeProviderState = {
-  theme: Theme; // Current theme being used
-  setTheme: (theme: Theme) => void; // Function to update the current theme
-};
-
-// Creating a context for the ThemeProvider with an initial value of undefined
-const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
-  undefined
-);
-
-// ThemeProvider component definition
-export function ThemeProvider({
-  children, // The child components that will be rendered within this provider
-  defaultTheme = "system", // Default theme is set to 'system' if not provided
-  storageKey = "ui-theme", // Default key for local storage to store the theme
-  attribute = "data-theme", // Default attribute to be set on the HTML element
-  enableSystem = true, // Default to enabling system theme detection
-  ...props // Spread operator to capture any additional props passed to the ThemeProvider
-}: ThemeProviderProps) {
-  // State to hold the current theme, initialized with the default theme
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
-
-  // Effect to update the document's root element based on the current theme
-  useEffect(() => {
-    const root = window.document.documentElement; // Get the root HTML element
-    root.removeAttribute(attribute); // Remove the existing attribute to reset the theme
-
-    // If the theme is set to 'system' and system detection is enabled
-    if (theme === "system" && enableSystem) {
-      // Check the system's color scheme preference
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark" // If dark mode is preferred, set systemTheme to 'dark'
-        : "light"; // Otherwise, set it to 'light'
-
-      root.classList.add(systemTheme); // Add the system theme class to the root element
-      return; // Exit the effect early
-    }
-
-    // If a specific theme is set, add that theme class to the root element
-    root.classList.add(theme);
-  }, [theme, attribute, enableSystem]); // Dependencies for the effect: re-run when theme, attribute, or enableSystem changes
-
-  // Value to be provided to the context, including the current theme and a function to set the theme
-  const value = {
-    theme, // Current theme
-    setTheme: (theme: Theme) => {
-      // Function to update the theme
-      localStorage.setItem(storageKey, theme); // Store the selected theme in local storage
-      setTheme(theme); // Update the state with the new theme
-    },
-  };
-
-  // Return the ThemeProvider context provider with the value and children
+export default function AboutContent() {
   return (
-    <ThemeProviderContext.Provider {...props} value={value}>
-      {children} {/* Render the children components */}
-    </ThemeProviderContext.Provider>
+    <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
+      <div className="max-w-3xl mx-auto">
+        <div className="space-y-4 mb-8">
+          <h1 className="text-4xl font-bold">About Me</h1>
+          <p className="text-muted-foreground text-lg">
+            Full-stack developer passionate about AI and modern web technologies.
+          </p>
+        </div>
+
+        <Card className="mb-8">
+          <CardContent className="pt-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+              <div className="space-y-4">
+                <p>
+                  Hello! I'm a software developer with over 5 years of experience building web applications
+                  and AI-powered solutions. I specialize in React, Next.js, and TypeScript, with a strong
+                  focus on creating performant and user-friendly applications.
+                </p>
+                <p>
+                  My journey in tech started with a Computer Science degree, followed by work at various
+                  startups where I developed a passion for AI and machine learning. I love combining
+                  traditional web development with cutting-edge AI technologies to create unique user
+                  experiences.
+                </p>
+                <p>
+                  When I'm not coding, you can find me writing technical blog posts, contributing to
+                  open-source projects, or exploring new technologies.
+                </p>
+              </div>
+              <Button variant="outline" className="flex items-center gap-2 whitespace-nowrap" asChild>
+                <Link href="/cv.pdf" target="_blank">
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden sm:inline">Download</span> CV
+                  <Download className="h-4 w-4 ml-1" />
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Skills />
+
+        <h2 className="text-2xl font-bold mb-4">Connect with Me</h2>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="outline" asChild>
+            <Link href="https://github.com/yourusername">
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="https://linkedin.com/in/yourusername">
+              <Linkedin className="mr-2 h-4 w-4" />
+              LinkedIn
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="https://twitter.com/yourusername">
+              <Twitter className="mr-2 h-4 w-4" />
+              Twitter
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="mailto:your.email@example.com">
+              <Mail className="mr-2 h-4 w-4" />
+              Email
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }
-
-// Custom hook to use the ThemeProvider context
-export const useTheme = () => {
-  const context = useContext(ThemeProviderContext); // Get the context value
-
-  // Throw an error if the hook is used outside of a ThemeProvider
-  if (context === undefined)
-    throw new Error("useTheme must be used within a ThemeProvider");
-
-  return context; // Return the context value for use in components
-};

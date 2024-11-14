@@ -1,88 +1,81 @@
-import * as React from 'react'; // Importing the React library for building components
+import * as React from 'react';
 
-import { cn } from '@/lib/utils'; // Importing a utility function for conditional class name merging
+import { cn } from '@/lib/utils';
 
-// Card component definition using React.forwardRef to allow ref forwarding
 const Card = React.forwardRef<
-  HTMLDivElement, // Type of the ref (HTMLDivElement)
-  React.HTMLAttributes<HTMLDivElement> // Props type for the component
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    ref={ref} // Forwarding the ref to the div element
+    ref={ref}
     className={cn(
-      'rounded-lg border bg-card text-card-foreground shadow-sm', // Base styles for the card
-      className // Merging any additional class names passed as props
+      'rounded-lg border bg-card text-card-foreground shadow-sm',
+      className
     )}
-    {...props} // Spreading any additional props onto the div
+    {...props}
   />
 ));
-Card.displayName = 'Card'; // Setting a display name for better debugging
+Card.displayName = 'Card';
 
-// CardHeader component definition, also using React.forwardRef
 const CardHeader = React.forwardRef<
-  HTMLDivElement, // Type of the ref (HTMLDivElement)
-  React.HTMLAttributes<HTMLDivElement> // Props type for the component
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    ref={ref} // Forwarding the ref to the div element
-    className={cn('flex flex-col space-y-1.5 p-6', className)} // Base styles for the card header
-    {...props} // Spreading any additional props onto the div
+    ref={ref}
+    className={cn('flex flex-col space-y-1.5 p-6', className)}
+    {...props}
   />
 ));
-CardHeader.displayName = 'CardHeader'; // Setting a display name for better debugging
+CardHeader.displayName = 'CardHeader';
 
-// CardTitle component definition, also using React.forwardRef
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement, // Type of the ref (HTMLParagraphElement)
-  React.HTMLAttributes<HTMLHeadingElement> // Props type for the component
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
   <h3
-    ref={ref} // Forwarding the ref to the h3 element
+    ref={ref}
     className={cn(
-      'text-2xl font-semibold leading-none tracking-tight', // Base styles for the card title
-      className // Merging any additional class names passed as props
+      'text-2xl font-semibold leading-none tracking-tight',
+      className
     )}
-    {...props} // Spreading any additional props onto the h3
+    {...props}
   />
 ));
-CardTitle.displayName = 'CardTitle'; // Setting a display name for better debugging
+CardTitle.displayName = 'CardTitle';
 
-// CardDescription component definition, also using React.forwardRef
 const CardDescription = React.forwardRef<
-  HTMLParagraphElement, // Type of the ref (HTMLParagraphElement)
-  React.HTMLAttributes<HTMLParagraphElement> // Props type for the component
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
   <p
-    ref={ref} // Forwarding the ref to the p element
-    className={cn('text-sm text-muted-foreground', className)} // Base styles for the card description
-    {...props} // Spreading any additional props onto the p
+    ref={ref}
+    className={cn('text-sm text-muted-foreground', className)}
+    {...props}
   />
 ));
-CardDescription.displayName = 'CardDescription'; // Setting a display name for better debugging
+CardDescription.displayName = 'CardDescription';
 
-// CardContent component definition, also using React.forwardRef
 const CardContent = React.forwardRef<
-  HTMLDivElement, // Type of the ref (HTMLDivElement)
-  React.HTMLAttributes<HTMLDivElement> // Props type for the component
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} /> // Base styles for the card content
+  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
 ));
-CardContent.displayName = 'CardContent'; // Setting a display name for better debugging
+CardContent.displayName = 'CardContent';
 
-// CardFooter component definition, also using React.forwardRef
 const CardFooter = React.forwardRef<
-  HTMLDivElement, // Type of the ref (HTMLDivElement)
-  React.HTMLAttributes<HTMLDivElement> // Props type for the component
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    ref={ref} // Forwarding the ref to the div element
-    className={cn('flex items-center p-6 pt-0', className)} // Base styles for the card footer
-    {...props} // Spreading any additional props onto the div
+    ref={ref}
+    className={cn('flex items-center p-6 pt-0', className)}
+    {...props}
   />
 ));
-CardFooter.displayName = 'CardFooter'; // Setting a display name for better debugging
+CardFooter.displayName = 'CardFooter';
 
-// Exporting all card-related components for use in other parts of the application
 export {
   Card,
   CardHeader,

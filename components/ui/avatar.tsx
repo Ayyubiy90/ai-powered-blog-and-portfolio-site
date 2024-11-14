@@ -1,54 +1,50 @@
-'use client'; // Indicates that this component is a client component in a Next.js application
+'use client';
 
-import * as React from 'react'; // Importing React library
-import * as AvatarPrimitive from '@radix-ui/react-avatar'; // Importing Avatar components from Radix UI
+import * as React from 'react';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
-import { cn } from '@/lib/utils'; // Importing a utility function for conditional class names
+import { cn } from '@/lib/utils';
 
-// Creating a forwardRef component for the Avatar
 const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>, // Type for the ref
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> // Props type for the component
+  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Root
-    ref={ref} // Forwarding the ref to the Root component
+    ref={ref}
     className={cn(
-      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full', // Default styles for the Avatar
-      className // Allowing additional class names to be passed in
+      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+      className
     )}
-    {...props} // Spreading any additional props onto the Root component
+    {...props}
   />
 ));
-Avatar.displayName = AvatarPrimitive.Root.displayName; // Setting the display name for debugging
+Avatar.displayName = AvatarPrimitive.Root.displayName;
 
-// Creating a forwardRef component for the AvatarImage
 const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>, // Type for the ref
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> // Props type for the component
+  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
-    ref={ref} // Forwarding the ref to the Image component
-    className={cn('aspect-square h-full w-full', className)} // Default styles for the Avatar image
-    {...props} // Spreading any additional props onto the Image component
+    ref={ref}
+    className={cn('aspect-square h-full w-full', className)}
+    {...props}
   />
 ));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName; // Setting the display name for debugging
+AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-// Creating a forwardRef component for the AvatarFallback
 const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>, // Type for the ref
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> // Props type for the component
+  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
-    ref={ref} // Forwarding the ref to the Fallback component
+    ref={ref}
     className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-muted', // Default styles for the fallback
-      className // Allowing additional class names to be passed in
+      'flex h-full w-full items-center justify-center rounded-full bg-muted',
+      className
     )}
-    {...props} // Spreading any additional props onto the Fallback component
+    {...props}
   />
 ));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName; // Setting the display name for debugging
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-// Exporting the Avatar, AvatarImage, and AvatarFallback components for use in other parts of the application
 export { Avatar, AvatarImage, AvatarFallback };
