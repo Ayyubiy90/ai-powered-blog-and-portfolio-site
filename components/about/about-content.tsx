@@ -1,7 +1,14 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Twitter, FileText, Download } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  FileText,
+  Download,
+} from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Skills } from "./skills";
@@ -13,7 +20,7 @@ export default function AboutContent() {
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl font-bold">About Me</h1>
           <p className="text-muted-foreground text-lg">
-            Full-stack developer passionate about AI and modern web technologies.
+          Frontend Developer with 3 years of experience building scalable web applications, specializing in the React ecosystem and modern web technologies. Proficient in frontend development with supporting experience in backend technologies for full-stack projects.
           </p>
         </div>
 
@@ -22,23 +29,23 @@ export default function AboutContent() {
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
               <div className="space-y-4">
                 <p>
-                  Hello! I'm a software developer with over 5 years of experience building web applications
-                  and AI-powered solutions. I specialize in React, Next.js, and TypeScript, with a strong
-                  focus on creating performant and user-friendly applications.
+                  I`m a Frontend Developer from Lagos, Nigeria, with a growing
+                  interest in backend development. Self-taught for 2 years, with
+                  an additional year of project experience, I`m passionate about
+                  creating responsive and intuitive web applications.
                 </p>
                 <p>
-                  My journey in tech started with a Computer Science degree, followed by work at various
-                  startups where I developed a passion for AI and machine learning. I love combining
-                  traditional web development with cutting-edge AI technologies to create unique user
-                  experiences.
-                </p>
-                <p>
-                  When I'm not coding, you can find me writing technical blog posts, contributing to
-                  open-source projects, or exploring new technologies.
+                  Currently pursuing a bachelor`s degree in Computer Science,
+                  I`m open to remote full-time, part-time, or contract roles.
+                  Outside of coding, I`m an avid tech enthusiast, love exploring
+                  new gadgets, and enjoy gaming.
                 </p>
               </div>
-              <Button variant="outline" className="flex items-center gap-2 whitespace-nowrap" asChild>
-                <Link href="/cv.pdf" target="_blank">
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 whitespace-nowrap"
+                asChild>
+                <Link href="/Abdullah Abdurazaq.pdf" target="_blank">
                   <FileText className="h-4 w-4" />
                   <span className="hidden sm:inline">Download</span> CV
                   <Download className="h-4 w-4 ml-1" />
@@ -53,25 +60,25 @@ export default function AboutContent() {
         <h2 className="text-2xl font-bold mb-4">Connect with Me</h2>
         <div className="flex flex-wrap gap-4">
           <Button variant="outline" asChild>
-            <Link href="https://github.com/yourusername">
+            <Link href="https://github.com/Ayyubiy90">
               <Github className="mr-2 h-4 w-4" />
               GitHub
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="https://linkedin.com/in/yourusername">
+            <Link href="https://www.linkedin.com/in/abdullah-a-2940b7260">
               <Linkedin className="mr-2 h-4 w-4" />
               LinkedIn
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="https://twitter.com/yourusername">
+            <Link href="https://twitter.com/ayyubiy10">
               <Twitter className="mr-2 h-4 w-4" />
               Twitter
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="mailto:your.email@example.com">
+            <Link href="mailto:ayyubiy67@gmail.com">
               <Mail className="mr-2 h-4 w-4" />
               Email
             </Link>
