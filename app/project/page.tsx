@@ -63,6 +63,14 @@ const projects = [
     github: "https://github.com/Ayyubiy90/modern-e-commerce-store",
     live: "https://modern-e-commerce-store.vercel.app/",
   },
+  {
+    title: "Siphome Smart Home System",
+    description:
+      "This project aims to revolutionize how we interact with our homes by providing advanced smart home solutions.",
+    tech: ["React", "JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Ayyubiy90/siphome",
+    live: "https://siphome-chinxas-projects.vercel.app/",
+  },
 ];
 
 // Defining the ProjectsPage component as the default export
