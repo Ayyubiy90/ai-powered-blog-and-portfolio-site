@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Abdullah AI-Powered Portfolio & Blog",
   description: "A modern portfolio and blog with AI-powered recommendations",
   icons: {
-    icon: "/icon.ico", // Specify the path to your favicon here
+    icon: "/icon.ico",
   },
 };
 
