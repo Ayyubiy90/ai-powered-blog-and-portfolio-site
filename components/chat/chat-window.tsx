@@ -1,46 +1,49 @@
-"use client"
+"use client";
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Bot, Send, User } from 'lucide-react'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Bot, Send, User } from "lucide-react";
+import { generateResponse } from "@/lib/chat-data";
 
 interface Message {
-  role: 'user' | 'assistant'
-  content: string
+  role: "user" | "assistant";
+  content: string;
 }
 
 export function ChatWindow() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      role: 'assistant',
-      content: 'Hi! I can help you learn more about the projects and blog posts. What would you like to know?',
+      role: "assistant",
+      content:
+        "Hi! I can help you learn more about my skills, projects, and blog posts. What would you like to know?",
     },
-  ])
-  const [input, setInput] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  ]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!input.trim() || isLoading) return
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
 
-    const userMessage = { role: 'user' as const, content: input }
-    setMessages(prev => [...prev, userMessage])
-    setInput('')
-    setIsLoading(true)
+    const userMessage = { role: "user" as const, content: input };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
 
-    // Simulate AI response
+    // Generate contextual response
     setTimeout(() => {
+      const response = generateResponse(input);
       const aiResponse = {
-        role: 'assistant' as const,
-        content: `I understand you're interested in "${input}". Let me help you find relevant information about that topic.`,
-      }
-      setMessages(prev => [...prev, aiResponse])
-      setIsLoading(false)
-    }, 1000)
-  }
+        role: "assistant" as const,
+        content: response,
+      };
+      setMessages((prev) => [...prev, aiResponse]);
+      setIsLoading(false);
+    }, 500);
+  };
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
@@ -57,17 +60,15 @@ export function ChatWindow() {
               <div
                 key={i}
                 className={`flex items-start gap-3 ${
-                  message.role === 'assistant' ? 'flex-row' : 'flex-row-reverse'
-                }`}
-              >
+                  message.role === "assistant" ? "flex-row" : "flex-row-reverse"
+                }`}>
                 <div
                   className={`p-2 rounded-full ${
-                    message.role === 'assistant'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted'
-                  }`}
-                >
-                  {message.role === 'assistant' ? (
+                    message.role === "assistant"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted"
+                  }`}>
+                  {message.role === "assistant" ? (
                     <Bot className="w-4 h-4" />
                   ) : (
                     <User className="w-4 h-4" />
@@ -75,11 +76,10 @@ export function ChatWindow() {
                 </div>
                 <div
                   className={`rounded-lg px-4 py-2 max-w-[80%] ${
-                    message.role === 'assistant'
-                      ? 'bg-muted'
-                      : 'bg-primary text-primary-foreground'
-                  }`}
-                >
+                    message.role === "assistant"
+                      ? "bg-muted"
+                      : "bg-primary text-primary-foreground"
+                  }`}>
                   {message.content}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export function ChatWindow() {
         <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
           <Input
             value={input}
-            onChange={e => setInput(e.target.value)}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="Ask me anything..."
             disabled={isLoading}
           />
@@ -99,5 +99,5 @@ export function ChatWindow() {
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }
