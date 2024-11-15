@@ -24,6 +24,15 @@ export function ChatWindow() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // Suggested prompts
+  const suggestedPrompts = [
+    "What are your skills?",
+    "Tell me about your projects.",
+    "What is your blog about?",
+    "Can you share your experience?",
+    "Who are you?",
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -84,6 +93,17 @@ export function ChatWindow() {
                 </div>
               </div>
             ))}
+            {/* Display suggested prompts */}
+            {messages.length === 1 && (
+              <div className="rounded-lg px-4 py-2 bg-muted">
+                <p>Here are some suggested prompts you can ask:</p>
+                <ul className="list-disc pl-5">
+                  {suggestedPrompts.map((prompt, index) => (
+                    <li key={index}>&quot;{prompt}&quot;</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </ScrollArea>
         <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
