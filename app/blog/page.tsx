@@ -1,25 +1,42 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
 
 const posts = [
   {
+    title: "Building an AI-Powered Portfolio & Blog Platform",
+    description:
+      "A deep dive into creating a modern portfolio with AI capabilities.",
+    date: "2024-03-26",
+    readTime: "10 min read",
+    slug: "ai-portfolio-project",
+  },
+  {
     title: "Building an AI-Powered Chat Assistant",
-    description: "Learn how to create a sophisticated chatbot using modern AI technologies.",
+    description:
+      "Learn how to create a sophisticated chatbot using modern AI technologies.",
     date: "2024-01-15",
     readTime: "8 min read",
     slug: "building-ai-chat-assistant",
   },
   {
     title: "The Future of Web Development",
-    description: "Exploring upcoming trends and technologies in web development.",
+    description:
+      "Exploring upcoming trends and technologies in web development.",
     date: "2024-01-10",
     readTime: "6 min read",
     slug: "future-web-development",
   },
   {
     title: "Optimizing React Applications",
-    description: "Best practices and techniques for improving React app performance.",
+    description:
+      "Best practices and techniques for improving React app performance.",
     date: "2024-01-05",
     readTime: "10 min read",
     slug: "optimizing-react-applications",
@@ -38,7 +55,7 @@ export default function BlogPage() {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
-            <Link key={index} href={`/blog/${post.slug}`}>
+            <Link key={index} href={`/blog/posts/${post.slug}`}>
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle>{post.title}</CardTitle>
