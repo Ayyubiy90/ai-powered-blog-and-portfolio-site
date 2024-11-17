@@ -50,7 +50,7 @@ export default function BlogPage() {
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl font-bold">Blog</h1>
           <p className="text-muted-foreground text-lg">
-            Thoughts, tutorials, and insights about software development and AI.
+          Project stories, coding insights, and personal reflections on software development and AI.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
