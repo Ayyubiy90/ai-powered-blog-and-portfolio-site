@@ -1,14 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Twitter, Facebook, Linkedin, Share2 } from "lucide-react";
+import { Twitter, Facebook, Linkedin } from "lucide-react";
 
 export default function AIPortfolioPost() {
-  const [showComments, setShowComments] = useState(false);
-
   const sharePost = (platform: string) => {
     const url = window.location.href;
-    const text = "Check out this blog post!"; 
+    const text = "Check out this blog post!";
 
     let shareUrl = "";
     switch (platform) {
@@ -34,10 +31,6 @@ export default function AIPortfolioPost() {
     window.open(shareUrl, "_blank");
   };
 
-  const handleComments = () => {
-    setShowComments(!showComments);
-  };
-
   return (
     <div className="container mx-auto px-4 md:px-6 py-12">
       <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
@@ -49,7 +42,7 @@ export default function AIPortfolioPost() {
           <time>March 26, 2024</time> • 10 min read
         </div>
 
-        {/* Share and Comments Buttons */}
+        {/* Share Buttons */}
         <div className="flex space-x-4 mb-8">
           <button
             onClick={() => sharePost("twitter")}
@@ -69,22 +62,7 @@ export default function AIPortfolioPost() {
             aria-label="Share on LinkedIn">
             <Linkedin className="h-6 w-6 text-black dark:text-white" />
           </button>
-          <button
-            onClick={handleComments}
-            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            aria-label="Comments">
-            <Share2 className="h-6 w-6 text-black dark:text-white" />
-          </button>
         </div>
-
-        {showComments && (
-          <div className="border-t pt-4 mt-4">
-            <h3 className="text-lg font-semibold">Comments Section</h3>
-            <p className="text-muted-foreground">
-              Comments section is not implemented yet.
-            </p>
-          </div>
-        )}
 
         <h2 className="text-2xl font-semibold mb-4">Project Overview 🎯</h2>
 
@@ -119,18 +97,15 @@ export default function AIPortfolioPost() {
             rendering and static site generation, crucial for fast performance
             and SEO optimization.
           </li>
-
           <li>
             <strong>TypeScript:</strong> Ensured type safety throughout the
             development process, minimizing errors and enhancing code
             maintainability.
           </li>
-
           <li>
             <strong>Tailwind CSS:</strong> Utilized for styling to create a
             modular and easily manageable design system.
           </li>
-
           <li>
             <strong>OpenAI API:</strong> Integrated to power the AI assistant,
             enabling natural language interactions and personalized content
@@ -150,12 +125,10 @@ export default function AIPortfolioPost() {
             can ask questions about my projects, technologies used, or even get
             blog suggestions.
           </li>
-
           <li>
             Dynamic Blog Recommendations: Leveraged the AI to analyze user input
             and suggest blog posts relevant to their interests.
           </li>
-
           <li>
             Responsive and Interactive Design: Ensured the platform is fully
             responsive with interactive UI elements to enhance user engagement.
@@ -203,7 +176,7 @@ export default function AIPortfolioPost() {
             href="https://abdullah-ai-portfolio-blog.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500  hover:text-blue-700">
+            className="text-blue-500 hover:text-blue-700">
             live demo
           </a>{" "}
           or check out the{" "}
