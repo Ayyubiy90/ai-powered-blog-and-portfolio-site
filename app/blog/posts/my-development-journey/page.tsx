@@ -1,4 +1,36 @@
+"use client";
+
+import { Twitter, Facebook, Linkedin } from "lucide-react";
+
 export default function MyDevelopmentJourneyPost() {
+  const sharePost = (platform: string) => {
+    const url = window.location.href;
+    const text = "Check out my development journey!";
+
+    let shareUrl = "";
+    switch (platform) {
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+          url
+        )}&text=${encodeURIComponent(text)}`;
+        break;
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`;
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+          url
+        )}&title=${encodeURIComponent(text)}`;
+        break;
+      default:
+        return;
+    }
+
+    window.open(shareUrl, "_blank");
+  };
+
   return (
     <div className="container mx-auto px-4 md:px-6 py-12">
       <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
@@ -8,6 +40,28 @@ export default function MyDevelopmentJourneyPost() {
 
         <div className="text-muted-foreground mb-8">
           <time>January 15, 2024</time> • 8 min read
+        </div>
+
+        {/* Share Buttons */}
+        <div className="flex space-x-4 mb-8">
+          <button
+            onClick={() => sharePost("twitter")}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Share on Twitter">
+            <Twitter className="h-6 w-6 text-black dark:text-white" />
+          </button>
+          <button
+            onClick={() => sharePost("facebook")}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Share on Facebook">
+            <Facebook className="h-6 w-6 text-black dark:text-white" />
+          </button>
+          <button
+            onClick={() => sharePost("linkedin")}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Share on LinkedIn">
+            <Linkedin className="h-6 w-6 text-black dark:text-white" />
+          </button>
         </div>
 
         <h2 className="text-2xl font-semibold mb-4">Introduction 🚀</h2>
