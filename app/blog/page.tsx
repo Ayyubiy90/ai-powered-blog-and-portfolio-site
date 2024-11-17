@@ -13,33 +13,17 @@ const posts = [
     title: "Building an AI-Powered Portfolio & Blog Platform",
     description:
       "A deep dive into creating a modern portfolio with AI capabilities.",
-    date: "2024-03-26",
+    date: "2024-11-17",
     readTime: "10 min read",
     slug: "ai-portfolio-project",
   },
   {
-    title: "Building an AI-Powered Chat Assistant",
+    title: "Reflecting on My Journey: Lessons Learned in Web Development",
     description:
-      "Learn how to create a sophisticated chatbot using modern AI technologies.",
+      "A reflection on my journey as a developer, sharing key experiences and lessons learned.",
     date: "2024-01-15",
     readTime: "8 min read",
-    slug: "building-ai-chat-assistant",
-  },
-  {
-    title: "The Future of Web Development",
-    description:
-      "Exploring upcoming trends and technologies in web development.",
-    date: "2024-01-10",
-    readTime: "6 min read",
-    slug: "future-web-development",
-  },
-  {
-    title: "Optimizing React Applications",
-    description:
-      "Best practices and techniques for improving React app performance.",
-    date: "2024-01-05",
-    readTime: "10 min read",
-    slug: "optimizing-react-applications",
+    slug: "my-development-journey",
   },
 ];
 
@@ -50,7 +34,8 @@ export default function BlogPage() {
         <div className="space-y-4 mb-8">
           <h1 className="text-4xl font-bold">Blog</h1>
           <p className="text-muted-foreground text-lg">
-          Project stories, coding insights, and personal reflections on software development and AI.
+            Project stories, coding insights, and personal reflections on
+            software development and AI.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
