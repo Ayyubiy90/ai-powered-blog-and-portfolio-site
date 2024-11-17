@@ -2,10 +2,20 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  SiReact, SiVuedotjs, SiTypescript, SiAngular, SiSass,
-  SiNodedotjs, SiExpress, SiPhp,
-  SiGit, SiTailwindcss, SiOpenai,
-} from 'react-icons/si';
+  SiReact,
+  SiVuedotjs,
+  SiTypescript,
+  SiAngular,
+  SiSass,
+  SiNodedotjs,
+  SiExpress,
+  SiPhp,
+  SiGit,
+  SiTailwindcss,
+  SiOpenai,
+  SiFirebase,
+  SiMongodb, 
+} from "react-icons/si";
 
 const skills = {
   Frontend: [
@@ -13,18 +23,20 @@ const skills = {
     { name: "Vue.js", Icon: SiVuedotjs },
     { name: "TypeScript", Icon: SiTypescript },
     { name: "Angular", Icon: SiAngular },
-    { name: "SCSS", Icon: SiSass }
+    { name: "SCSS", Icon: SiSass },
   ],
   Backend: [
     { name: "Node.js", Icon: SiNodedotjs },
     { name: "Express", Icon: SiExpress },
-    { name: "PHP", Icon: SiPhp }
+    { name: "PHP", Icon: SiPhp },
+    { name: "Firebase", Icon: SiFirebase },
+    { name: "MongoDB", Icon: SiMongodb }, 
   ],
   "Tools & Others": [
     { name: "Git", Icon: SiGit },
     { name: "Tailwind CSS", Icon: SiTailwindcss },
-    { name: "AI", Icon: SiOpenai }
-  ]
+    { name: "AI", Icon: SiOpenai },
+  ],
 };
 
 export function Skills() {
