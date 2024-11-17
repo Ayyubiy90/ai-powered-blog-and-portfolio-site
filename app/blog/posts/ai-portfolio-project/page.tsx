@@ -127,7 +127,7 @@ export default function AIPortfolioPost() {
             href="https://your-demo-link.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 underline">
+            className="text-blue-500  hover:text-blue-700">
             live demo
           </a>{" "}
           or check out the{" "}
@@ -135,7 +135,7 @@ export default function AIPortfolioPost() {
             href="https://github.com/Ayyubiy90/ai-powered-blog-and-portfolio-site"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 underline">
+            className="text-blue-500 hover:text-blue-700">
             code on GitHub
           </a>
           .
@@ -148,7 +148,8 @@ export default function AIPortfolioPost() {
             <a
               href="https://github.com/Ayyubiy90/ai-powered-blog-and-portfolio-site"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-700">
               source code on GitHub!
             </a>
           </p>
