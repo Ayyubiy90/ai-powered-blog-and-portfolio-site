@@ -24,7 +24,7 @@ A modern, responsive portfolio and blog website built with Next.js, React, and T
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ai-portfolio.git
+   git clone https://github.com/Ayyubiy90/ai-powered-blog-and-portfolio-site.git
    ```
 
 2. Install dependencies:
