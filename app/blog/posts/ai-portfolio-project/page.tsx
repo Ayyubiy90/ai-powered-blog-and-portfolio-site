@@ -7,6 +7,15 @@ export default function AIPortfolioPost() {
     const url = window.location.href;
     const text = "Check out this blog post!";
 
+    // Track the event with Google Analytics
+    if (window.gtag) {
+      window.gtag("event", "share", {
+        event_category: "Social Media",
+        event_label: platform,
+        value: 1,
+      });
+    }
+
     let shareUrl = "";
     switch (platform) {
       case "twitter":
@@ -24,6 +33,12 @@ export default function AIPortfolioPost() {
           url
         )}&title=${encodeURIComponent(text)}`;
         break;
+      case "instagram":
+        // Instagram does not support direct sharing via URL, so you can handle it differently
+        alert(
+          "Please share this post on Instagram by copying the link and pasting it in your Instagram app."
+        );
+        return;
       default:
         return;
     }
@@ -62,6 +77,12 @@ export default function AIPortfolioPost() {
             aria-label="Share on LinkedIn">
             <Linkedin className="h-6 w-6 text-black dark:text-white" />
           </button>
+          <button
+            onClick={() => sharePost("instagram")}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Share on Instagram">
+            <Instagram className="h-6 w-6 text-black dark:text-white" />
+          </button>
         </div>
 
         <h2 className="text-2xl font-semibold mb-4">Project Overview 🎯</h2>
@@ -93,7 +114,7 @@ export default function AIPortfolioPost() {
 
         <ul className="list-disc pl-5 mb-6">
           <li>
-            <strong>Next.js:</strong> Chosen for its seamless server-side
+            <strong> Next.js:</strong> Chosen for its seamless server-side
             rendering and static site generation, crucial for fast performance
             and SEO optimization.
           </li>
@@ -220,7 +241,7 @@ export default function AIPortfolioPost() {
             rel="noopener noreferrer"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             aria-label="Follow on Facebook">
-            <Facebook className="h-6 w-6 text-black dark:text-white" />
+            <Facebook className="h-6 w-6 text -black dark:text-white" />
           </a>
           <a
             href="https://www.linkedin.com/in/abdullah-a-2940b7260"
