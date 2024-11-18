@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -5,8 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Calendar } from "lucide-react";
+import { Calendar, Mail } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const posts = [
   {
@@ -28,6 +31,35 @@ const posts = [
 ];
 
 export default function BlogPage() {
+  const [email, setEmail] = useState("");
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleSubscription = async (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setResponseMessage(result.message);
+        setEmail("");
+      } else {
+        setResponseMessage(result.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setResponseMessage("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
       <div className="max-w-6xl mx-auto">
@@ -57,6 +89,35 @@ export default function BlogPage() {
               </Card>
             </Link>
           ))}
+        </div>
+
+        {/* Subscription Form */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-4">
+            Subscribe to Our Newsletter
+          </h2>
+          <form
+            id="subscription-form"
+            onSubmit={handleSubscription}
+            className="flex flex-col md:flex-row md:space-x-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="border border-gray-300 rounded-md p-2 flex-1"
+            />
+            <button
+              type="submit"
+              className="mt-2 md:mt-0 bg-black text-white rounded-md p-2 hover:bg-white hover:text-black transition flex items-center">
+              <Mail className="mr-2 h-4 w-4" />
+              Subscribe
+            </button>
+          </form>
+          {responseMessage && (
+            <p className="mt-4 text-green-600">{responseMessage}</p>
+          )}
         </div>
       </div>
     </div>
