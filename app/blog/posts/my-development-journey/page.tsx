@@ -1,6 +1,6 @@
 "use client";
 
-import { Twitter, Facebook, Linkedin } from "lucide-react";
+import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 
 export default function MyDevelopmentJourneyPost() {
   const sharePost = (platform: string) => {
@@ -134,6 +134,42 @@ export default function MyDevelopmentJourneyPost() {
             If you have any questions or want to discuss more about my journey,
             feel free to reach out!
           </p>
+        </div>
+
+        {/* Follow Buttons */}
+        <div className="flex space-x-4 mt-8">
+          <a
+            href="https://twitter.com/ayyubiy10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Twitter">
+            <Twitter className="h-6 w-6 text-black dark:text-white" />
+          </a>
+          <a
+            href="https://www.facebook.com/Ayyubiy90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Facebook">
+            <Facebook className="h-6 w-6 text-black dark:text-white" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abdullah-a-2940b7260"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on LinkedIn">
+            <Linkedin className="h-6 w-6 text-black dark:text-white" />
+          </a>
+          <a
+            href="https://www.instagram.com/ayyubiy_10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Instagram">
+            <Instagram className="h-6 w-6 text-black dark:text-white" />
+          </a>
         </div>
       </article>
     </div>

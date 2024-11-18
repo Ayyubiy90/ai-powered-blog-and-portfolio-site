@@ -205,22 +205,14 @@ export default function AIPortfolioPost() {
         </div>
 
         {/* Follow Buttons */}
-        <div className="flex justify-center space-x-4 mt-12">
+        <div className="flex space-x-4 mt-8">
           <a
-            href="https://www.linkedin.com/in/abdullah-a-2940b7260"
+            href="https://twitter.com/ayyubiy10"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            aria-label="Follow on LinkedIn">
-            <Linkedin className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
-          </a>
-          <a
-            href="https://www.instagram.com/ayyubiy_10"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            aria-label="Follow on Instagram">
-            <Instagram className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
+            aria-label="Follow on Twitter">
+            <Twitter className="h-6 w-6 text-black dark:text-white" />
           </a>
           <a
             href="https://www.facebook.com/Ayyubiy90"
@@ -228,15 +220,23 @@ export default function AIPortfolioPost() {
             rel="noopener noreferrer"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             aria-label="Follow on Facebook">
-            <Facebook className="h-10 w -10 text-black dark:text-white transition-transform transform hover:scale-110" />
+            <Facebook className="h-6 w-6 text-black dark:text-white" />
           </a>
           <a
-            href="https://twitter.com/ayyubiy10"
+            href="https://www.linkedin.com/in/abdullah-a-2940b7260"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            aria-label="Follow on Twitter">
-            <Twitter className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
+            aria-label="Follow on LinkedIn">
+            <Linkedin className="h-6 w-6 text-black dark:text-white" />
+          </a>
+          <a
+            href="https://www.instagram.com/ayyubiy_10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Instagram">
+            <Instagram className="h-6 w-6 text-black dark:text-white" />
           </a>
         </div>
       </article>
