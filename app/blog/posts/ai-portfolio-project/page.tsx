@@ -1,6 +1,6 @@
 "use client";
 
-import { Twitter, Facebook, Linkedin } from "lucide-react";
+import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 
 export default function AIPortfolioPost() {
   const sharePost = (platform: string) => {
@@ -202,6 +202,42 @@ export default function AIPortfolioPost() {
               source code on GitHub!
             </a>
           </p>
+        </div>
+
+        {/* Follow Buttons */}
+        <div className="flex justify-center space-x-4 mt-12">
+          <a
+            href="https://www.linkedin.com/in/abdullah-a-2940b7260"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on LinkedIn">
+            <Linkedin className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
+          </a>
+          <a
+            href="https://www.instagram.com/ayyubiy_10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Instagram">
+            <Instagram className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
+          </a>
+          <a
+            href="https://www.facebook.com/Ayyubiy90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Facebook">
+            <Facebook className="h-10 w -10 text-black dark:text-white transition-transform transform hover:scale-110" />
+          </a>
+          <a
+            href="https://twitter.com/ayyubiy10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            aria-label="Follow on Twitter">
+            <Twitter className="h-10 w-10 text-black dark:text-white transition-transform transform hover:scale-110" />
+          </a>
         </div>
       </article>
     </div>
