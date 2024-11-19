@@ -5,8 +5,9 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
+  CardTitle, 
 } from "@/components/ui/card";
+import { Search } from "@/components/ui/search";
 import { Calendar, Mail } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -32,6 +33,7 @@ const posts = [
 
 export default function BlogPage() {
   const [email, setEmail] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
 
   const handleSubscription = async (event: { preventDefault: () => void }) => {
@@ -60,6 +62,11 @@ export default function BlogPage() {
     }
   };
 
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
       <div className="max-w-6xl mx-auto">
@@ -69,9 +76,16 @@ export default function BlogPage() {
             Project stories, coding insights, and personal reflections on
             software development and AI.
           </p>
+          <div className="max-w-md">
+            <Search 
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Search posts..."
+            />
+          </div>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <Link key={index} href={`/blog/posts/${post.slug}`}>
               <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -99,18 +113,18 @@ export default function BlogPage() {
           <form
             id="subscription-form"
             onSubmit={handleSubscription}
-            className="flex md:space-x-4">
+            className="flex flex-col md:flex-row md:space-x-4">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="border border-gray-300 rounded-md p-2 flex-1 md:w-auto"
+              className="border border-gray-300 rounded-md p-2 flex-1 w-full md:w-auto"
             />
             <button
               type="submit"
-              className="bg-black text-white rounded-md p-2 hover:bg-white hover:text-black transition flex items-center md:w-auto">
+              className="mt-2 md:mt-0 bg-black text-white rounded-md p-2 hover:bg-white hover:text-black transition flex items-center max-w-xs w-full md:w-auto">
               <Mail className="mr-2 h-4 w-4" />
               Subscribe
             </button>

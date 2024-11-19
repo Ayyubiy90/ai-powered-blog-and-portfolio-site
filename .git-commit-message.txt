@@ -1,0 +1,7 @@
+feat: Add search functionality to blog posts
+
+- Add search input field with responsive design
+- Implement real-time filtering of blog posts
+- Maintain consistent layout across mobile and desktop views
+- Add search icon and placeholder text
+- Ensure accessibility with proper ARIA labels
