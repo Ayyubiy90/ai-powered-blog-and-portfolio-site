@@ -8,15 +8,6 @@ export default function AIPortfolioPost() {
     const url = window.location.href;
     const text = "Check out this blog post!";
 
-    // Track the event with Google Analytics
-    if (window.gtag) {
-      window.gtag("event", "share", {
-        event_category: "Social Media",
-        event_label: platform,
-        value: 1,
-      });
-    }
-
     let shareUrl = "";
     switch (platform) {
       case "twitter":
