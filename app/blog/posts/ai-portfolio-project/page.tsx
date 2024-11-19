@@ -2,6 +2,7 @@
 
 import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 import { RelatedPosts } from "@/components/blog/related-posts";
+import { Comments } from "@/components/blog/comments";
 
 export default function AIPortfolioPost() {
   const sharePost = (platform: string) => {
@@ -255,6 +256,9 @@ export default function AIPortfolioPost() {
 
         {/* Related Posts */}
         <RelatedPosts />
+        
+        {/* Comments Section */}
+        <Comments />
       </article>
     </div>
   );
