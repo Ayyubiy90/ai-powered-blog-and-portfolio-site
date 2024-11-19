@@ -19,7 +19,7 @@ export function Navigation() {
     className?: string;
     isMobile?: boolean;
   }) => (
-    <nav className={cn("flex items-center gap-1 md:gap-2", className)}>
+    <nav className={cn("flex items-center gap-1 md:gap-2", className)} role="navigation" aria-label="Main navigation">
       <Link href="/">
         <Button
           variant="ghost"
@@ -60,7 +60,7 @@ export function Navigation() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
           <Brain className="h-6 w-6" />
@@ -84,7 +84,7 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-64">
               <SheetTitle>Navigation Menu</SheetTitle>
-              <div className="mt-6">
+              <div className="mt-6" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
                 <NavItems className="flex-col items-start gap-2" isMobile />
               </div>
             </SheetContent>

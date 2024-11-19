@@ -26,8 +26,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative min-h-screen flex flex-col">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-background focus:text-foreground">
+              Skip to main content
+            </a>
             <Navigation />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1" tabIndex={-1}>
+              {children}
+            </main>
             <Footer />
             <Toaster />
           </div>
