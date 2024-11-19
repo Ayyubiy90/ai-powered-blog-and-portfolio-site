@@ -1,6 +1,7 @@
 "use client";
 
 import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
+import { RelatedPosts } from "@/components/blog/related-posts";
 
 export default function AIPortfolioPost() {
   const sharePost = (platform: string) => {
@@ -260,6 +261,9 @@ export default function AIPortfolioPost() {
             <Instagram className="h-6 w-6 text-black dark:text-white" />
           </a>
         </div>
+
+        {/* Related Posts */}
+        <RelatedPosts />
       </article>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
+import { RelatedPosts } from "@/components/blog/related-posts";
 
 export default function MyDevelopmentJourneyPost() {
   const sharePost = (platform: string) => {
@@ -67,8 +68,8 @@ export default function MyDevelopmentJourneyPost() {
         <h2 className="text-2xl font-semibold mb-4">Introduction 🚀</h2>
 
         <p>
-          When I started my journey as a developer, I knew it wouldn’t be easy,
-          but I didn’t quite grasp the range of challenges and rewarding moments
+          When I started my journey as a developer, I knew it wouldn&apos;t be easy,
+          but I didn&apos;t quite grasp the range of challenges and rewarding moments
           that would come my way. Today, I want to share some key experiences
           and lessons learned that have shaped my path and made me a stronger
           developer.
@@ -97,7 +98,7 @@ export default function MyDevelopmentJourneyPost() {
 
         <p>
           One pivotal project involved collaborating with a cross-functional
-          team on a feature rollout. I learned that it wasn’t just the technical
+          team on a feature rollout. I learned that it wasn&apos;t just the technical
           solution that mattered but also how well I communicated progress and
           challenges to non-technical stakeholders. This improved my ability to
           align expectations and foster trust within the team.
@@ -110,7 +111,7 @@ export default function MyDevelopmentJourneyPost() {
         </h2>
 
         <p>
-          Technology evolves at breakneck speed, and staying stagnant isn’t an
+          Technology evolves at breakneck speed, and staying stagnant isn&apos;t an
           option. I made it a habit to dedicate time to learning new frameworks
           and best practices. Embracing a continuous learning mindset led me to
           explore technologies like Next.js and TypeScript, enriching my skills
@@ -124,7 +125,7 @@ export default function MyDevelopmentJourneyPost() {
         <p>
           Reflecting on these experiences reminds me why I love what I do—not
           just the coding but the growth, problem-solving, and opportunities to
-          collaborate and share knowledge. Whether you’re just starting or are
+          collaborate and share knowledge. Whether you&apos;re just starting or are
           deep into your development career, embracing challenges as learning
           moments can transform your journey.
         </p>
@@ -171,6 +172,9 @@ export default function MyDevelopmentJourneyPost() {
             <Instagram className="h-6 w-6 text-black dark:text-white" />
           </a>
         </div>
+
+        {/* Related Posts */}
+        <RelatedPosts />
       </article>
     </div>
   );
