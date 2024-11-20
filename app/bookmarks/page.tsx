@@ -27,7 +27,7 @@ export default function BookmarksPage() {
       <h1 className="text-4xl font-bold mb-8">Your Bookmarks</h1>
       {bookmarkedPosts.length === 0 ? (
         <p className="text-muted-foreground">
-          You haven't bookmarked any posts yet.
+          You haven&apos;t bookmarked any posts yet.
         </p>
       ) : (
         <div className="grid gap-6">
