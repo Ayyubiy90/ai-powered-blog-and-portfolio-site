@@ -178,7 +178,7 @@ export default function MyDevelopmentJourneyPost() {
         <RelatedPosts />
         
         {/* Comments Section */}
-        <Comments />
+        <Comments postId={""} />
       </article>
     </div>
   );

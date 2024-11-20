@@ -258,7 +258,7 @@ export default function AIPortfolioPost() {
         <RelatedPosts />
         
         {/* Comments Section */}
-        <Comments />
+        <Comments postId={""} />
       </article>
     </div>
   );
