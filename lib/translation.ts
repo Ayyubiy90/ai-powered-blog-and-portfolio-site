@@ -13,7 +13,7 @@ export function getPreferredLanguage(acceptLanguage: string) {
   const default_language = 'en';
 
   try {
-    return match(acceptLanguage, supported, default_language);
+    return match(acceptLanguage, supported as string[], default_language);
   } catch (error) {
     return default_language;
   }

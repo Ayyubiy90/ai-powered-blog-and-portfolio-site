@@ -1,4 +1,3 @@
-import { i18n } from '@/i18n-config'
 
 export type Language = {
   code: string
