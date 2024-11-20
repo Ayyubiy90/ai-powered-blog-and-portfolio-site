@@ -4,6 +4,7 @@ import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { Comments } from "@/components/blog/comments";
 import { BookmarkButton } from "@/components/blog/bookmark-button";
+import { PostRating } from "@/components/blog/post-rating";
 
 export default function AIPortfolioPost() {
   const sharePost = (platform: string) => {
@@ -255,6 +256,9 @@ export default function AIPortfolioPost() {
             <Instagram className="h-6 w-6 text-black dark:text-white" />
           </a>
         </div>
+
+        {/* Post Rating */}
+        <PostRating postId="ai-portfolio-project" />
 
         {/* Related Posts */}
         <RelatedPosts />
