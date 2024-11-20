@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Send } from "lucide-react";
+import { Send, Trash } from "lucide-react";
 
 interface Comment {
   id: string;
@@ -25,7 +25,9 @@ export function Comments({ postId }: CommentsProps) {
     if (storedComments) {
       const allComments = JSON.parse(storedComments);
       // Filter comments for current post
-      const postComments = allComments.filter((comment: Comment) => comment.postId === postId);
+      const postComments = allComments.filter(
+        (comment: Comment) => comment.postId === postId
+      );
       setComments(postComments);
     }
   }, [postId]);
@@ -50,8 +52,11 @@ export function Comments({ postId }: CommentsProps) {
     const updatedComments = [...allComments, comment];
     localStorage.setItem("blogComments", JSON.stringify(updatedComments));
 
-    // Update state with only the comments for this post
-    setComments([...comments, comment]);
+    // Update state with only the comments for this post, sorted by date
+    const updatedPostComments = [...comments, comment].sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    setComments(updatedPostComments);
     setNewComment({ name: "", content: "" });
   };
 
@@ -104,7 +109,36 @@ export function Comments({ postId }: CommentsProps) {
               className="p-4 border rounded dark:border-gray-700">
               <div className="flex justify-between items-center mb-2">
                 <h4 className="font-semibold">{comment.name}</h4>
-                <span className="text-sm text-gray-500">{comment.date}</span>
+                <div className="flex items-center gap-4">
+                  <span className="text-sm text-gray-500">{comment.date}</span>
+                  <button
+                    onClick={() => {
+                      // Get all comments from localStorage
+                      const existingComments =
+                        localStorage.getItem("blogComments");
+                      const allComments = existingComments
+                        ? JSON.parse(existingComments)
+                        : [];
+
+                      // Filter out the deleted comment
+                      const updatedComments = allComments.filter(
+                        (c: Comment) => c.id !== comment.id
+                      );
+
+                      // Update localStorage
+                      localStorage.setItem(
+                        "blogComments",
+                        JSON.stringify(updatedComments)
+                      );
+
+                      // Update state with filtered comments for this post
+                      setComments(comments.filter((c) => c.id !== comment.id));
+                    }}
+                    className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+                    aria-label="Delete comment">
+                    <Trash className="h-4 w-4 text-gray-500 hover:text-red-500" />
+                  </button>
+                </div>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
                 {comment.content}
