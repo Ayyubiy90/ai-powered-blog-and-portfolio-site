@@ -3,6 +3,7 @@
 import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { Comments } from "@/components/blog/comments";
+import { BookmarkButton } from "@/components/blog/bookmark-button";
 
 export default function AIPortfolioPost() {
   const sharePost = (platform: string) => {
@@ -50,8 +51,9 @@ export default function AIPortfolioPost() {
           <time>March 26, 2024</time> • 10 min read
         </div>
 
-        {/* Share Buttons */}
-        <div className="flex space-x-4 mb-8">
+        {/* Share and Bookmark Buttons */}
+        <div className="flex space-x-4 mb-8 items-center">
+          <BookmarkButton postId="ai-portfolio-project" />
           <button
             onClick={() => sharePost("twitter")}
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"

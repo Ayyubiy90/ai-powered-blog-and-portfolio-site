@@ -3,6 +3,7 @@
 import { Twitter, Facebook, Linkedin, Instagram } from "lucide-react";
 import { RelatedPosts } from "@/components/blog/related-posts";
 import { Comments } from "@/components/blog/comments";
+import { BookmarkButton } from "@/components/blog/bookmark-button";
 
 export default function MyDevelopmentJourneyPost() {
   const sharePost = (platform: string) => {
@@ -44,8 +45,9 @@ export default function MyDevelopmentJourneyPost() {
           <time>January 15, 2024</time> • 8 min read
         </div>
 
-        {/* Share Buttons */}
-        <div className="flex space-x-4 mb-8">
+        {/* Share and Bookmark Buttons */}
+        <div className="flex space-x-4 mb-8 items-center">
+          <BookmarkButton postId="my-development-journey" />
           <button
             onClick={() => sharePost("twitter")}
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
