@@ -10,7 +10,9 @@ import {
 import { Search } from "@/components/ui/search";
 import { Calendar, Mail } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { LanguageSelector } from "@/components/ui/language-selector";
+import { translateText } from "@/lib/translation";
 
 const posts = [
   {
@@ -35,6 +37,8 @@ export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [translatedPosts, setTranslatedPosts] = useState(posts);
 
   const handleSubscription = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -67,11 +71,37 @@ export default function BlogPage() {
     post.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  useEffect(() => {
+    async function translatePosts() {
+      if (currentLanguage === 'en') {
+        setTranslatedPosts(posts);
+        return;
+      }
+
+      const translated = await Promise.all(
+        posts.map(async (post) => ({
+          ...post,
+          title: await translateText(post.title, currentLanguage),
+          description: await translateText(post.description, currentLanguage),
+        }))
+      );
+      setTranslatedPosts(translated);
+    }
+
+    translatePosts();
+  }, [currentLanguage]);
+
   return (
     <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="space-y-4 mb-8">
-          <h1 className="text-4xl font-bold">Blog</h1>
+          <div className="flex justify-between items-center">
+            <h1 className="text-4xl font-bold">Blog</h1>
+            <LanguageSelector 
+              currentLanguage={currentLanguage}
+              onLanguageChange={setCurrentLanguage}
+            />
+          </div>
           <p className="text-muted-foreground text-lg">
             Project stories, coding insights, and personal reflections on
             software development and AI.
