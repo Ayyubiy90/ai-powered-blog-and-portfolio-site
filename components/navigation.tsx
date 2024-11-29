@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
 import { Brain, FileText, Home, MessageSquare, User, Bookmark } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils"; 
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "./ui/sheet";
 import { Menu } from "lucide-react";
@@ -36,6 +36,15 @@ export function Navigation() {
           onClick={() => isMobile && setIsOpen(false)}>
           <FileText className="mr-2 h-4 w-4" />
           Projects
+        </Button>
+      </Link>
+      <Link href="/blog"> {/* New Blog Link */}
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
+          <FileText className="mr-2 h-4 w-4" /> {/* Blog Icon */}
+          Blog
         </Button>
       </Link>
       <Link href="/chat">
