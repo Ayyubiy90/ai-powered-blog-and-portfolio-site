@@ -1,6 +1,6 @@
 import { Button } from "../components/ui/button"; // Adjusted import path
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card"; // Adjusted import path
-import { Brain, MessageSquare, Sparkles } from "lucide-react";
+import { Brain, MessageSquare, Sparkles, Github, Globe } from "lucide-react"; // Added icons
 import Link from "next/link";
 import { projectsData, blogData } from "../lib/chat-data"; // Adjusted import path
 
@@ -35,7 +35,7 @@ export default function Home() {
 
       <section className="w-full py-12 md:py-24 lg:py-32 mb-8"> {/* Added mb-8 for margin bottom */}
         <div className="container px-4 md:px-6">
-          <h2 className="text-2xl font-bold">Recent Projects</h2>
+          <h2 className="text-2xl font-bold mb-4">Recent Projects</h2> {/* Added mb-4 for margin bottom */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projectsData.slice(0, 3).map((project, index) => (
               <Card key={index} className="flex flex-col p-6 hover:shadow-lg transition-shadow">
@@ -45,10 +45,14 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <Link href={project.github}>
-                    <Button variant="outline" className="mt-2">View Code</Button> {/* Styled button */}
+                    <Button variant="outline" className="mt-2">
+                      <Github className="mr-2 h-4 w-4" /> View Code {/* Added icon */}
+                    </Button>
                   </Link>
                   <Link href={project.live}>
-                    <Button variant="outline" className="mt-2">Live Demo</Button> {/* Styled button */}
+                    <Button variant="outline" className="mt-2">
+                      <Globe className="mr-2 h-4 w-4" /> Live Demo {/* Added icon */}
+                    </Button>
                   </Link>
                 </CardContent>
               </Card>
@@ -59,7 +63,7 @@ export default function Home() {
 
       <section className="w-full py-12 md:py-24 lg:py-32 bg-muted mb-8"> {/* Added mb-8 for margin bottom */}
         <div className="container px-4 md:px-6">
-          <h2 className="text-2xl font-bold">Recent Blog Posts</h2>
+          <h2 className="text-2xl font-bold mb-4">Recent Blog Posts</h2> {/* Added mb-4 for margin bottom */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {blogData.slice(0, 2).map((post, index) => (
               <Card key={index} className="flex flex-col p-6 hover:shadow-lg transition-shadow">
