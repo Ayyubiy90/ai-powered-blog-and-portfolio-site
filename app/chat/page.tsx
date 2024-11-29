@@ -1,4 +1,4 @@
-import { ChatWindow } from '@/components/chat/chat-window'
+import { ChatWindow } from "../../components/chat/chat-window"; // Adjusted import path
 
 export default function ChatPage() {
   return (
@@ -10,8 +10,10 @@ export default function ChatPage() {
             Ask questions about my projects, blog posts, or technical expertise.
           </p>
         </div>
-        <ChatWindow />
+        <div className="bg-white shadow-md rounded-lg p-4"> {/* Added styling for chat window */}
+          <ChatWindow />
+        </div>
       </div>
     </div>
-  )
+  );
 }
