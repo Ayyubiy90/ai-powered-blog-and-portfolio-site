@@ -60,21 +60,21 @@ A modern, feature-rich portfolio and blog platform built with Next.js 13, React,
 │   ├── about/             # About page
 │   ├── blog/              # Blog pages & posts
 │   ├── bookmarks/         # Saved content
-│   ├── chat/             # AI chat interface
-│   ├── projects/         # Projects showcase
-│   └── layout.tsx        # Root layout
-├── components/           # React components
-│   ├── about/           # About page components
-│   ├── blog/            # Blog components
-│   ├── chat/            # Chat components
-│   ├── ui/              # UI components
-│   └── providers.tsx    # Context providers
-├── lib/                 # Utility functions
-│   ├── store/          # Zustand stores
-│   ├── translations/   # i18n configurations
-│   └── utils.ts        # Helper functions
-├── hooks/              # Custom React hooks
-└── public/             # Static assets
+│   ├── chat/              # AI chat interface
+│   ├── projects/          # Projects showcase
+│   └── layout.tsx         # Root layout
+├── components/            # React components
+│   ├── about/             # About page components
+│   ├── blog/              # Blog components
+│   ├── chat/              # Chat components
+│   ├── ui/                # UI components
+│   └── providers.tsx      # Context providers
+├── lib/                   # Utility functions
+│   ├── store/             # Zustand stores
+│   ├── translations/      # i18n configurations
+│   └── utils.ts           # Helper functions
+├── hooks/                 # Custom React hooks
+└── public/                # Static assets
 ```
 
 ## 🎨 Features in Detail
