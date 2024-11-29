@@ -3,8 +3,17 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
-import { Brain, FileText, Home, MessageSquare, User, Bookmark } from "lucide-react";
-import { cn } from "../lib/utils"; 
+import {
+  Brain,
+  FileText,
+  Home,
+  MessageSquare,
+  User,
+  Bookmark,
+  Folder,
+  BookOpen,
+} from "lucide-react";
+import { cn } from "../lib/utils";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "./ui/sheet";
 import { Menu } from "lucide-react";
@@ -19,7 +28,10 @@ export function Navigation() {
     className?: string;
     isMobile?: boolean;
   }) => (
-    <nav className={cn("flex items-center gap-1 md:gap-2", className)} role="navigation" aria-label="Main navigation">
+    <nav
+      className={cn("flex items-center gap-1 md:gap-2", className)}
+      role="navigation"
+      aria-label="Main navigation">
       <Link href="/">
         <Button
           variant="ghost"
@@ -34,16 +46,18 @@ export function Navigation() {
           variant="ghost"
           className="flex items-center"
           onClick={() => isMobile && setIsOpen(false)}>
-          <FileText className="mr-2 h-4 w-4" />
+          <Folder className="mr-2 h-4 w-4" /> {/* Changed icon for Projects */}
           Projects
         </Button>
       </Link>
-      <Link href="/blog"> {/* New Blog Link */}
+      <Link href="/blog">
+        {" "}
+        {/* New Blog Link */}
         <Button
           variant="ghost"
           className="flex items-center"
           onClick={() => isMobile && setIsOpen(false)}>
-          <FileText className="mr-2 h-4 w-4" /> {/* Blog Icon */}
+          <BookOpen className="mr-2 h-4 w-4" /> {/* Changed icon for Blog */}
           Blog
         </Button>
       </Link>
@@ -78,7 +92,9 @@ export function Navigation() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
+    <header
+      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      role="banner">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
           <Brain className="h-6 w-6" />
@@ -102,7 +118,11 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-64">
               <SheetTitle>Navigation Menu</SheetTitle>
-              <div className="mt-6" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+              <div
+                className="mt-6"
+                id="mobile-nav"
+                role="navigation"
+                aria-label="Mobile navigation">
                 <NavItems className="flex-col items-start gap-2" isMobile />
               </div>
             </SheetContent>
