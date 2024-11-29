@@ -1,7 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "../components/ui/button"; // Adjusted import path
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "../components/ui/card"; // Adjusted import path
 import { Brain, MessageSquare, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { projectsData, blogData } from "../lib/chat-data"; // Adjusted import path
 
 export default function Home() {
   return (
@@ -32,38 +39,63 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <h2 className="text-2xl font-bold">Recent Projects</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projectsData.slice(0, 3).map(
+              (
+                project: {
+                  title: string;
+                  description: string;
+                  tech: string[];
+                  github: string;
+                  live: string;
+                },
+                index: number
+              ) => (
+                <Card
+                  key={index}
+                  className="flex flex-col p-6 hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Link href={project.github}>View Code</Link>
+                    <Link href={project.live}>Live Demo</Link>
+                  </CardContent>
+                </Card>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
       <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-            <Link href="/chat">
-              <Card className="flex flex-col items-center space-y-4 p-6 hover:shadow-lg transition-shadow">
-                <Brain className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">AI Assistant</h3>
-                <p className="text-center text-gray-500 dark:text-gray-400">
-                  Get personalized recommendations and answers about my work
-                  from an AI assistant.
-                </p>
-              </Card>
-            </Link>
-            <Link href="/blog">
-              <Card className="flex flex-col items-center space-y-4 p-6 hover:shadow-lg transition-shadow">
-                <MessageSquare className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Technical Blog</h3>
-                <p className="text-center text-gray-500 dark:text-gray-400">
-                  Deep dives into software development, AI, and technology
-                  trends.
-                </p>
-              </Card>
-            </Link>
-            <Link href="/projects">
-              <Card className="flex flex-col items-center space-y-4 p-6 hover:shadow-lg transition-shadow">
-                <Sparkles className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Featured Projects</h3>
-                <p className="text-center text-gray-500 dark:text-gray-400">
-                  Showcase of my best work and technical achievements.
-                </p>
-              </Card>
-            </Link>
+          <h2 className="text-2xl font-bold">Recent Blog Posts</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {blogData
+              .slice(0, 2)
+              .map(
+                (
+                  post: { title: string; description: string; slug: string },
+                  index: number
+                ) => (
+                  <Card
+                    key={index}
+                    className="flex flex-col p-6 hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <CardTitle>{post.title}</CardTitle>
+                      <CardDescription>{post.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Link href={`/blog/posts/${post.slug}`}>Read More</Link>
+                    </CardContent>
+                  </Card>
+                )
+              )}
           </div>
         </div>
       </section>
