@@ -12,6 +12,22 @@ import { Button } from "@/components/ui/button";
 // Array of project objects containing details about each project
 const projects = [
   {
+    title: "Data Visualization Dashboard",
+    description:
+      "A modern, interactive dashboard built with React, TypeScript, and Recharts for analyzing and visualizing data in real-time. Features a responsive design, dark mode support, and interactive charts.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Lucide React", "Regression.js",],
+    github: "https://github.com/Ayyubiy90/data-visualization-dashboard",
+    live: "https://data-visualization-dashboard-drab.vercel.app/",
+  },
+  {
+    title: "Modern Portfolio Website",
+    description:
+      "A beautiful, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a modern design.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide icons", "Vite",],
+    github: "https://github.com/Ayyubiy90/siphome",
+    live: "https://siphome-chinxas-projects.vercel.app/",
+  },
+  {
     title: "Personal Budget Tracker", // Title of the project
     description:
       "The Personal Budget Tracker is a user-friendly web app that helps you manage your finances by tracking income and expenses with secure authentication and interactive visual insights.", // Brief description of the project
