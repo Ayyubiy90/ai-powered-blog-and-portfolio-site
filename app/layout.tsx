@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
-import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "../components/theme-provider"; // Corrected import
+import { Navigation } from "../components/navigation"; // Corrected import
+import { Footer } from "../components/footer"; // Corrected import
+import { Toaster } from "../components/ui/toaster"; // Corrected import
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Abdullah AI-Powered Portfolio & Blog",
   description: "A modern portfolio and blog with AI-powered recommendations",
   icons: {
-    icon: "/icon.ico",
+    icon: "/icon1.svg",
   },
 };
 
