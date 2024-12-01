@@ -1,4 +1,4 @@
-import { Card } from "../components/ui/card"; // Adjusted import path
+import { Card } from "../../components/ui/card";
 import Link from "next/link";
 
 const testimonials = [
