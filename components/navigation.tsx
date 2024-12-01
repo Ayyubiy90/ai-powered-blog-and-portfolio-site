@@ -28,10 +28,7 @@ export function Navigation() {
     className?: string;
     isMobile?: boolean;
   }) => (
-    <nav
-      className={cn("flex items-center gap-1 md:gap-2", className)}
-      role="navigation"
-      aria-label="Main navigation">
+    <nav className={cn("flex items-center gap-1 md:gap-2", className)} role="navigation" aria-label="Main navigation">
       <Link href="/">
         <Button
           variant="ghost"
@@ -46,19 +43,26 @@ export function Navigation() {
           variant="ghost"
           className="flex items-center"
           onClick={() => isMobile && setIsOpen(false)}>
-          <Folder className="mr-2 h-4 w-4" /> {/* Changed icon for Projects */}
+          <Folder className="mr-2 h-4 w-4" />
           Projects
         </Button>
       </Link>
       <Link href="/blog">
-        {" "}
-        {/* New Blog Link */}
         <Button
           variant="ghost"
           className="flex items-center"
           onClick={() => isMobile && setIsOpen(false)}>
-          <BookOpen className="mr-2 h-4 w-4" /> {/* Changed icon for Blog */}
+          <BookOpen className="mr-2 h-4 w-4" />
           Blog
+        </Button>
+      </Link>
+      <Link href="/testimonials"> {/* New Testimonials Link */}
+        <Button
+          variant="ghost"
+          className="flex items-center"
+          onClick={() => isMobile && setIsOpen(false)}>
+          <FileText className="mr-2 h-4 w-4" /> {/* Icon for Testimonials */}
+          Testimonials
         </Button>
       </Link>
       <Link href="/chat">
@@ -92,9 +96,7 @@ export function Navigation() {
   );
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-      role="banner">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" role="banner">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center space-x-2">
           <Brain className="h-6 w-6" />
@@ -118,11 +120,7 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-64">
               <SheetTitle>Navigation Menu</SheetTitle>
-              <div
-                className="mt-6"
-                id="mobile-nav"
-                role="navigation"
-                aria-label="Mobile navigation">
+              <div className="mt-6" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
                 <NavItems className="flex-col items-start gap-2" isMobile />
               </div>
             </SheetContent>
