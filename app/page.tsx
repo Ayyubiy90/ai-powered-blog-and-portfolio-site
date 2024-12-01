@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <div className="space-x-4">
               <Link href="/chat">
-                <Button className="px-8">Chat with AI</Button>
+                <Button variant="outline" className="px-8">Chat with AI</Button>
               </Link>
               <Link href="/projects">
                 <Button variant="outline" className="px-8">
