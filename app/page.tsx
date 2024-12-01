@@ -1,6 +1,6 @@
 import { Button } from "../components/ui/button"; // Adjusted import path
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card"; // Adjusted import path
-import { Brain, MessageSquare, Sparkles, Github, Globe } from "lucide-react"; // Added icons
+import { Brain, MessageSquare, Sparkles, Github, Globe, FileText } from "lucide-react"; // Added icons
 import Link from "next/link";
 import { projectsData, blogData } from "../lib/chat-data"; // Adjusted import path
 
@@ -45,13 +45,13 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <Link href={project.github}>
-                    <Button variant="outline" className="mt-2 mr-2"> {/* Added margin right */}
-                      <Github className="mr-2 h-4 w-4" /> View Code
+                    <Button variant="outline" className="mt-2 button">
+                      <Github className="mr-2 h-4 w-4" /> View Code {/* Updated class */}
                     </Button>
                   </Link>
                   <Link href={project.live}>
-                    <Button variant="outline" className="mt-2"> {/* No margin needed here */}
-                      <Globe className="mr-2 h-4 w-4" /> Live Demo
+                    <Button variant="outline" className="mt-2 button">
+                      <Globe className="mr-2 h-4 w-4" /> Live Demo {/* Updated class */}
                     </Button>
                   </Link>
                 </CardContent>
@@ -73,7 +73,9 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <Link href={`/blog/posts/${post.slug}`}>
-                    <Button variant="outline" className="mt-2">Read More</Button> {/* Styled button */}
+                    <Button variant="outline" className="mt-2 button">
+                      <FileText className="mr-2 h-4 w-4" /> Read More {/* Added icon */}
+                    </Button>
                   </Link>
                 </CardContent>
               </Card>
