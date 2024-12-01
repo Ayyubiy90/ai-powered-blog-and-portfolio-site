@@ -46,12 +46,12 @@ export default function Home() {
                 <CardContent>
                   <Link href={project.github}>
                     <Button variant="outline" className="mt-2 button">
-                      <Github className="mr-2 h-4 w-4" /> View Code {/* Updated class */}
+                      <Github className="mr-2 h-4 w-4" /> View Code
                     </Button>
                   </Link>
                   <Link href={project.live}>
-                    <Button variant="outline" className="mt-2 button">
-                      <Globe className="mr-2 h-4 w-4" /> Live Demo {/* Updated class */}
+                    <Button variant="outline" className="mt-2 ml-2 button"> {/* Added margin left */}
+                      <Globe className="mr-2 h-4 w-4" /> Live Demo
                     </Button>
                   </Link>
                 </CardContent>
