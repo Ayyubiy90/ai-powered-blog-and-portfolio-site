@@ -5,7 +5,7 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle, 
+  CardTitle,
 } from "@/components/ui/card";
 import { Search } from "@/components/ui/search";
 import { Calendar, Mail } from "lucide-react";
@@ -15,6 +15,14 @@ import { LanguageSelector } from "@/components/ui/language-selector";
 import { translateText } from "@/lib/translation";
 
 const posts = [
+  {
+    title: "From Gaming Marathons to Coding Sprints",
+    description:
+      "How Your Controller Skills Can Level Up Your Programming Game.",
+    date: "2025-01-28",
+    readTime: "5 min read",
+    slug: "gaming-to-coding",
+  },
   {
     title: "Building an AI-Powered Portfolio & Blog Platform",
     description:
@@ -66,14 +74,15 @@ export default function BlogPage() {
     }
   };
 
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.description.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredPosts = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   useEffect(() => {
     async function translatePosts() {
-      if (currentLanguage === 'en') {
+      if (currentLanguage === "en") {
         setTranslatedPosts(posts);
         return;
       }
@@ -97,7 +106,7 @@ export default function BlogPage() {
         <div className="space-y-4 mb-8">
           <div className="flex justify-between items-center">
             <h1 className="text-4xl font-bold">Blog</h1>
-            <LanguageSelector 
+            <LanguageSelector
               currentLanguage={currentLanguage}
               onLanguageChange={setCurrentLanguage}
             />
@@ -107,7 +116,7 @@ export default function BlogPage() {
             software development and AI.
           </p>
           <div className="max-w-md">
-            <Search 
+            <Search
               value={searchQuery}
               onChange={setSearchQuery}
               placeholder="Search posts..."

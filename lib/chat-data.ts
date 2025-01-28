@@ -103,6 +103,15 @@ export const projectsData = [
 
 export const blogData = [
   {
+    title: "From Gaming Marathons to Coding Sprints",
+    description:
+      "How Video Games Secretly Trained Me to Become a Better Developer.",
+    date: "2025-01-29",
+    readTime: "10 min read",
+    slug: "gaming-to-coding",
+    topics: ["Gaming", "Coding", "Video Games"], // Added topics
+  },
+  {
     title: "Building an AI-Powered Portfolio & Blog Platform",
     description:
       "A deep dive into creating a modern portfolio with AI capabilities.",

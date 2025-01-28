@@ -14,6 +14,12 @@ export function RelatedPosts() {
   // This could be fetched from an API or passed as props
   const relatedPosts: RelatedPost[] = [
     {
+      title: "Gaming to Coding",
+      description: "From Gaming Marathons to Coding Sprints",
+      path: "/blog/posts/gaming-to-coding",
+      date: "January 29, 2025"
+    },
+    {
       title: "Building an AI-Powered Portfolio Platform",
       description: "Exploring the integration of AI features in a Next.js portfolio site",
       path: "/blog/posts/ai-portfolio-project",
